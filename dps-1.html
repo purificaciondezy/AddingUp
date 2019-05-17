@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddingUpUI</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="grayLightest">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean navbar border-bottom border-dark">
+            <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/refinitiv-logo.png" style="width:150px;"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto nav-pills">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Adding Up</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="dps.html">DPS</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">History</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Sample, Name</a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Change Password</a><a class="dropdown-item" role="presentation" href="login.html">Logout</a></div>
+                        </li>
+                    </ul>
+            </div>
+    </div>
+    </nav>
+    </div>
+    <div style="padding:18px;">
+        <div class="container">
+            <div class="row">
+                <div class="col" style="padding:10px;"><label class="col-form-label" style="font-size:20px;"><strong><em>DPS As Reported Currency is different to Do Plus Period Filing Currency&nbsp;</em></strong><br></label></div>
+            </div>
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead style="background-color:#404040;color:#ffffff;">
+                        <tr>
+                            <th class="text-center" style="width:47px;">Periodicity</th>
+                            <th class="text-center" style="width:135px;">DPS</th>
+                            <th class="text-center" style="width:49px;">DPS Reported Currency</th>
+                            <th class="text-center" style="width:122px;">Period Filing Curency</th>
+                            <th class="text-center">Period Date</th>
+                            <th class="text-center">Do plus DPS</th>
+                            <th class="text-center">Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">S1</td>
+                            <td><input type="text" class="form-control" style="border-color:#8c8c8c;"></td>
+                            <td>
+                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="width:70px;background-color:#ffffff;border-color:#8c8c8c;color:rgb(0,0,0);" float="center">USD</button>
+                                    <div
+                                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+            </div>
+            </td>
+            <td>
+                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="width:70px;background-color:#ffffff;border-color:#8c8c8c;color:rgb(0,0,0);">USD</button>
+                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                </div>
+            </td>
+            <td><input type="date" class="form-control" style="width:176px; border-color:#8c8c8c;"></td>
+            <td><input type="text" class="form-control" readonly="" style="background-color:#b2b2b2;"></td>
+            <td rowspan=""></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td>Q3 3 Mos</td>
+                <td><input type="text" class="form-control" style="border-color:#8c8c8c;"></td>
+                <td rowspan="2">
+                    <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="width:70px;background-color:#ffffff;border-color:#8c8c8c;color:rgb(0,0,0);">USD</button>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </div>
+                </td>
+                <td rowspan="2"><input type="text" class="form-control" readonly="" style="background-color:#b2b2b2;"></td>
+                <td rowspan="2"><input type="date" class="form-control" style="width:176px; border-color:#8c8c8c;"></td>
+                <td><input type="text" class="form-control" readonly="" style="background-color:#b2b2b2;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Y3 YTD</td>
+                <td></td>
+                <td><input type="text" class="form-control" readonly="" style="background-color:#b2b2b2;"></td>
+                <td><input type="text" class="form-control" readonly="" style="background-color:#b2b2b2;"></td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-lg-4">
+                <div></div><button class="btn btn-primary" type="button" style="padding:16px;margin:10px;">Refresh</button><button class="btn btn-primary" type="button" style="padding:17px;margin:10px;">Reset</button><button class="btn btn-primary float-left"
+                    type="button" style="padding:16px;margin:10px;">Calculate</button></div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

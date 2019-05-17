@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddingUpUI</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean navbar border-bottom border-dark" style="font-size:12px;">
+        <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/refinitiv-logo.png" style="width:127px;"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto nav-pills">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Adding Up</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="raw.html">RAW</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="dps.html">DPS</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Sample, Name</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Change Password</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div></div>
+    <div id="form" class="form-group grayLightest" style="color:rgb(33,37,41);padding:10px 52px;font-size:11px;">
+        <div class="container">
+            <div class="row">
+                <div class="col"><label class="col-form-label">Company Name</label></div>
+            </div>
+            <div class="row">
+                <div class="col"><input type="text" placeholder="Company Name" id="txtCompanyName" class="form-control" style="width:406px;font-size:12px;"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col"><label class="col-form-label">NDA Org ID</label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><input type="text" placeholder="NDA Org ID" id="txtNDAOrgID" class="form-control" style="font-size:12px;"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col"><label class="col-form-label">Repno</label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><input type="text" placeholder="Repno" id="txtRepno" class="form-control" style="font-size:12px;"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col"><label class="col-form-label">Fiscal Year</label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><input type="text" required="" placeholder="Fiscal Year" maxlength="4" id="txtFiscalYear" class="form-control" style="font-size:12px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 offset-0" style="padding:5px 30px;">
+                    <div></div>
+                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Quarter</label></div>
+                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Semi-Annual</label></div>
+                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Hybrid</label></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="col-md-4 col-lg-7 offset-lg-2 offset-xl-0" id="btnProduct" style="width:910px;">
+                    <div class="row">
+                        <div class="col-xl-11 offset-xl-0">
+                            <button class="btn btn-primary" type="button" id="btnProduct" style="margin:4px;background-color:#001eff;height:50px;width:100px;font-size:12px;" name="btnProduct"><strong>PRODUCT</strong><br>FundbPRO</button>
+                            <button class="btn btn-primary" type="button" id="btnDoPlus" style="margin:5px;background-color:#666666;border-color:#666666;height:50px;width:100px;padding:1px;font-size:12px;" name="btnDoPlus"><strong>DO PLUS</strong><br>Fundb<br></button>
+                            <button class="btn btn-primary"type="button" id="btnDoPlus" style="margin:2px;background-color:#8c8c8c;border-color:#8c8c8c;height:50px;width:100px;font-size:12px;padding:7px 7px;" name="btnDoPlus"><strong>Clear</strong><br></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px;width:1177px 1177px;">
+        <div class="container" style="padding:0px 0px;margin:0px 20pxpx;width:3000px;">
+            <div class="table-responsive table-sm table-bordered" style="font-size:10px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="font-size:15px;">INCOME STATEMENT</th>
+                            <th style="font-size:15px;"></th>
+                            <th style="font-size:15px;"></th>
+                            <th style="font-size:15px;"></th>
+                            <th style="font-size:15px;"></th>
+                            <th style="font-size:15px;">
+                                <div class="col">
+
+                                    <div class="dropdown"><button class="btn btn-outline-primary dropdown-toggle float-right" data-toggle="dropdown" aria-expanded="false" type="button" style="height:27px;padding:-9px;font-size:12px;">Year</button>
+
+                                        <div class="dropdown-menu"
+                                            role="menu"><a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Fiscal Year</a><a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Prior Fiscal Year</a></div>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="30%"><strong>Period End Date</strong></td>
+                            <td class="bgGray" width="15%"></td>
+                            <td class="bgGray" width="15%"></td>
+                            <td class="bgGray" width="15%"></td>
+                            <td class="bgGray" width="15%"></td>
+                            <td class="bgGray" width="15%"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interim Number</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Statement Date</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Filing Date</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submission Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scaling</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Update Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interim Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Statement Period Length</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task(F=Flash,P=Prelim,D=Detailed, ND=Non-detailed)</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Cost of Revenue</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Selling/General/Administrative Expense</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Interest Expense - Operating</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Operating Expense</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Interest Expense - Non-Operating</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income Before Taxes</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Provision for Income Taxes</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income After Taxes</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extraordinary Item</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Available to Common Excl. Extraordinary Items </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income Available to Com Incl ExtraOrd</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reported Net Income</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Basic Weighted Average Shares</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diluted Weighted Average Shares</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><a href="#STSI"><strong>Total Special Items</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Expense, Supplemental </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Capitalized, Supplemental </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equity in Affiliates</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Depreciation</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortisation</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Depreciation & Amortization(VDEP+VAMI)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortisation of Goodwill</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gross Dividends - Common Stock</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DPS - Common Stock Primary Issue 1</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DPS - Common Stock Primary Issue 2</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Special DPS – Common Stock Primary Issue </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rental Expense, Supplemental </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Research & Development Expense, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Tax – Total</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Funds From Operations (REIT) </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>XNIC vs XNIA</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TTAX vs VITT</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td style="font-size:15px;color:#ff0000;"><strong>ADDING UP</strong><br></td>
+                            <td class="bgYellow center"><strong>Annual vs Semi-annual</strong></td>
+                            <td class="bgYellow center"><strong>Difference</strong></td>
+                            <td class="bgGreen center"><strong>S2 YTD = S1 + S2</strong></td>
+                            <td class="bgGreen center"><strong>Difference</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Operating Expense</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income After Taxes</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extraordinary Item</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Available to Common Excl. Extraordinary Items </strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income Available to Com Incl ExtraOrd</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#STSI"><strong>Total Special Items</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Expense, Supplemental </strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Depreciation</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortisation</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Depreciation & Amortization(VDEP+VAMI)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortisation of Goodwill</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gross Dividends - Common Stock</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DPS - Common Stock Primary Issue 1</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DPS - Common Stock Primary Issue 2</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Special DPS – Common Stock Primary Issue </strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rental Expense, Supplemental </strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Tax – Total</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th id="STSI" style="font-size:15px;color:#ff0000;"><strong>STSI BREAKDOWN</strong><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Purchased R&D Written-Off</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Restructuring Charge</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Litigation</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impairment – Assets Held for Use</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impairment – Assets Held for Sale </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>(Gain) Loss on Sale of Fixed Assets, Operating</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gain (Loss) on Sale of Assets, Non-Operating</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Income </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Restructuring Charge</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Litigation Expense</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortization of Acquisition Costs </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortization of Acquisition Costs, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>(Gain) Loss on Sale of Assets, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impairment-Assets Held for Sale, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impairment-Assets Held for Use, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Litigation Charge, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purchased R&D Written-Off, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Restructuring Charge, Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income), Supplemental</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Special Items</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Special Items - Adding up</strong></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgYellow"></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;color:#ff0000;"><strong>NEGATIVE VALUES</strong><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost of Revenue</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Selling/General/Administrative Expense</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Depreciation</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortisation</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rental Expense, Supplemental </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Income - Operating </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Expense - Operating </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Income - Non-Operating </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Expense - Non-Operating </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Expense, Supplemental </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest Capitalized, Supplemental </strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impairment(description≠"*rever*,*back*,*net*")</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;"><strong>BALANCE SHEET</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Statement Date</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submission Type</strong><br></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Update Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Cash & Equivalents</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Short Term Investments</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Accounts Receivable - Trade, Net</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Notes Receivable - Short Term</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Assets</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Accounts Payable</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Notes Payable/Short Term Debt</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Current Portion of LT Debt/Capital Leases</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Long Term Debt</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Capital Lease Obligations</td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Minority Interest</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Equity</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities & Shareholders' Equity </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shares Outstanding  - Common Stock Primary Issue </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shares Outstanding - Common Issue 2 </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treasury Shares - Common Stock Primary Issue </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treasury Shares - Common Issue 2 </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Common Shares Outstanding </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Funded Status </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employees </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Number of Common Shareholders </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Non-Performing Loans </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;"><strong>CASH FLOW STATEMENT</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Statement Date</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submission Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Update Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Depreciation</strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amortization</strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash from Operating Activities </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Acquisition of Business<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Purchase of Fixed Assets<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash from Investing Activities </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Long Term Debt, Net<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Short Term Debt, Net<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Long Term Debt Issued<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Short Term Debt Issued<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Long Term Debt Reduction<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="bgCyan">Short Term Debt Reduction<br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash from Financing Activities </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foreign Exchange Effects</strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Cash - Beginning Balance </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Cash - Ending Balance </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash Interest Paid </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash Taxes Paid </strong><br></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;"><strong>BUSINESS SEGMENT</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Statement Date</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submission Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scaling</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Update Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interim Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Segment Period Length</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intersegment Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Before Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Tax</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income After Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equity in Affiliates</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Assets</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;color:#ff0000;"><strong>BAL/INC vs SEGMENTS</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intersegment Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Before Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income After Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equity in Affiliates</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Assets</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities less LMNR Minority Interest</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;"><strong>GEOGRAPHIC SEGMENT</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Statement Date</strong><br></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submission Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scaling</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Update Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interim Type</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Segment Period Length</strong></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                            <td class="bgGray"></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intersegment Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Before Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Tax</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income After Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equity in Affiliates</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Assets</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><br></th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:15px;color:#ff0000;"><strong>BAL/INC vs SEGMENTS</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intersegment Revenue</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Before Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Income After Tax </strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equity in Affiliates</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Unusual Expense (Income)</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Assets</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities less LMNR Minority Interest</strong></td>
+                            <td class="bgYellow"></td>
+                            <td></td>
+                            <td class="bgGreen"></td>
+                            <td class="bgGreen"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

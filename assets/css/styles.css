@@ -1,0 +1,39 @@
+.grayLightest {
+  background-color:#f4f4f4;
+}
+
+.bgGray {
+  background-color:#d8d8d8;
+  width:110px;
+  text-align: center;
+}
+
+.bgYellow {
+  background-color:#FFC800;
+}
+
+.bgGreen {
+  background-color:#00c389;
+}
+
+.bgRed {
+  background-color:#ff0000;
+}
+
+.bgCyan {
+  background-color:#c3feff;
+}
+
+.table-bordered td, .table-bordered tr{
+	border-color: #000000;
+}
+
+.center{
+	text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+
