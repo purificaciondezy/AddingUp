@@ -454,20 +454,20 @@ if(strpos($row['COA'], $DDPS1) !== false)
 
       if(strpos($row['HelperValues'], $HelperValues00) !== false)
       {
-            $DDPS10[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $DDPS10[] = filter_var($row['LineItemValue'], FILTER_VALIDATE_FLOAT);
       }
       if(strpos($row['HelperValues'], $HelperValues11) !== false)
       {
-            $DDPS11[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $DDPS11[] = filter_var($row['LineItemValue'], FILTER_VALIDATE_FLOAT);
       }
       if(strpos($row['HelperValues'], $HelperValues22) !== false)
       {
-            $DDPS12[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $DDPS12[] = filter_var($row['LineItemValue'], FILTER_VALIDATE_FLOAT);
       }
 
       if(strpos($row['HelperValues'], $HelperValues33) !== false)
       {
-            $DDPS13[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $DDPS13[] = filter_var($row['LineItemValue'], FILTER_VALIDATE_FLOAT);
       }
 }
 
@@ -480,19 +480,19 @@ if(strpos($row['COA'], $DDPS2) !== false)
 
       if(strpos($row['HelperValues'], $HelperValues00) !== false)
       {
-            $DDPS20[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);
+            $DDPS20[] = $row['LineItemValue'];
       }
       if(strpos($row['HelperValues'], $HelperValues11) !== false)
       {
-            $DDPS21[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);
+            $DDPS21[] = $row['LineItemValue'];
       }
       if(strpos($row['HelperValues'], $HelperValues22) !== false)
       {
-            $DDPS22[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);
+            $DDPS22[] = $row['LineItemValue'];
       }
       if(strpos($row['HelperValues'], $HelperValues33) !== false)
       {
-            $DDPS23[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);
+            $DDPS23[] = $row['LineItemValue'];
       }
 }
 
@@ -1693,7 +1693,15 @@ if(strpos($row['COA'], $ATOT) !== false)
       }
       if(strpos($row['HelperValues'], $HelperValues22BAL) !== false)
       {
-            $ATOT2[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);
+            if($StatementDate3BAL==NULL)
+            {
+                $ATOT2[] = "";  
+            }
+            else
+            {
+               $ATOT2[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT);   
+            }
+            
       }
       if(strpos($row['HelperValues'], $HelperValues33BAL) !== false)
       {
@@ -3034,7 +3042,7 @@ if(strpos($row['COA'], $REXRbs) !== false)
 
       if(strpos($row['HelperValues'], $HelperValues00BS) !== false)
       {
-            $REXRbs0[] =filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT)* (int)filter_var($Scaling0BS, FILTER_SANITIZE_NUMBER_INT);        
+            $REXRbs0[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT)* (int)filter_var($Scaling0BS, FILTER_SANITIZE_NUMBER_INT); 
       }
       if(strpos($row['HelperValues'], $HelperValues11BS) !== false)
       {
@@ -3526,5 +3534,15 @@ if(strpos($row['COA'], $LTLLgs) !== false)
             $LTLLgs3[] = filter_var($row['LineItemValue'], FILTER_SANITIZE_NUMBER_INT)* (int)filter_var($Scaling3GS, FILTER_SANITIZE_NUMBER_INT);;
       }
 }
+
+
+
+
+
+
+
+
+
 ?>
+
 

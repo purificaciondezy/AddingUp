@@ -262,38 +262,38 @@
                               {
                                   echo '
                                   <tr>
-                                  <th>IssuerID</th>
-                                  <th>RepoNo</th>
-                                  <th>IndType</th>
-                                  <th>IssuerName</th>
-                                  <th>Exchange_CountryCode</th>
-                                  <th>Active</th>
-                                  <th>FinStmtType</th>
-                                  <th>FY</th>
-                                  <th>Interim</th>
-                                  <th>PeriodEndDate</th>
-                                  <th>StatementDate</th>
-                                  <th>FilingDate</th>
-                                  <th>Flash</th>
-                                  <th>Preliminary</th>
-                                  <th>Detailed</th>
-                                  <th>SubmissionType</th>
-                                  <th>Scaling</th>
-                                  <th>FilingType</th>
-                                  <th>PeriodType</th>
-                                  <th>InterimTypeDesc</th>
-                                  <th>DateLength</th>
-                                  <th>LineItemID</th>
-                                  <th>COA</th>
-                                  <th>ShortDescription</th>
-                                  <th>LineItemValue</th>
-                                  <th>UpdatedBy</th>
-                                  <th>UpdatedOn</th>
-                                  <th>HelperStatementDate</th>
-                                  <th>HelperFilingType</th>
-                                  <th>HelperValues</th>
-                                  <th>HelperInterimTypeLength</th>
-                                  <th>LineItemValue</th>
+                                        <th>IssuerID</th>
+                                        <th>RepoNo</th>
+                                        <th>IndType</th>
+                                        <th>IssuerName</th>
+                                        <th>Exchange_CountryCode</th>
+                                        <th>Active</th>
+                                        <th>FinStmtType</th>
+                                        <th>FY</th>
+                                        <th>Interim</th>
+                                        <th>PeriodEndDate</th>
+                                        <th>StatementDate</th>
+                                        <th>FilingDate</th>
+                                        <th>Flash</th>
+                                        <th>Preliminary</th>
+                                        <th>Detailed</th>
+                                        <th>SubmissionType</th>
+                                        <th>Scaling</th>
+                                        <th>FilingType</th>
+                                        <th>PeriodType</th>
+                                        <th>InterimTypeDesc</th>
+                                        <th>DateLength</th>
+                                        <th>LineItemID</th>
+                                        <th>COA</th>
+                                        <th>ShortDescription</th>
+                                        <th>LineItemValue</th>
+                                        <th>UpdatedBy</th>
+                                        <th>UpdatedOn</th>
+                                        <th>HelperStatementDate</th>
+                                        <th>HelperFilingType</th>
+                                        <th>HelperValues</th>
+                                        <th>HelperInterimTypeLength</th>
+                                        <th>Task</th>
                                   </tr>'; 
 
                                   if($pdoResult->rowCount()==0)
@@ -343,7 +343,7 @@
                                       </tr>';
 
                                     require 'header.php';
-
+                                    
                                     
                                       }
                                       

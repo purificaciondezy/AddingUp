@@ -5,6 +5,8 @@
         $RepoNo = $_POST['RepoNo'];
         $FY = $_POST['FY'];
         $Type = $_POST['radioButton'];
+        $PFY = $FY-1;
+       
 
         if($Type == "SemiAnnual")
         {
@@ -33,7 +35,7 @@
                         $RepoNo = $row['RepoNo'];
                         $IssuerName = $row['IssuerName'];   
                         $FY = $row['FY'];
-                        $PFY = $FY-1;
+                        
                     }
                 }
             }
