@@ -34,14 +34,10 @@
                         $RepoNo = $row['RepoNo'];
                         $IssuerName = $row['IssuerName'];   
                         $FY = $row['FY'];
-                        $_SESSION['radioButton'] = $_POST['radioButton'];
                     }
                 }
             }
         }
-        
-
-
         else
         {
             echo "<script>alert('Please select the presentation type.');</script>";

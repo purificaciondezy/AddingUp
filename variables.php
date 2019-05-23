@@ -4,7 +4,7 @@
     $RepoNo = "";
     $Type = "";
     $IssuerName = "";    
-    $FY = 00;
+    $FY = 0;
     $PFY = 0;
     $FinStmtType[] = "";
     $FinStmtTypeINC = 'INC';
