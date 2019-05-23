@@ -32,6 +32,7 @@ session_start();
         </div>
         </div>
     </nav>
+
     <div></div>
     <form id="search" action="index.php" method="post">
         <div id="form" class="form-group grayLightest" style="color:rgb(33,37,41);padding:10px 52px;font-size:11px;">
@@ -72,7 +73,7 @@ session_start();
                     <div class="col-md-12 offset-0" style="padding:5px 30px;">
                         <div></div>
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Quarter" value="Quarter"><label class="form-check-label" for="formCheck-1">Quarter</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual"><label class="form-check-label" for="formCheck-2">Semi-Annual</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required="" <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") {echo "checked";}?><label class="form-check-label" for="formCheck-2" >Semi-Annual</label></div>
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Hybrid" value="Hybrid"><label class="form-check-label" for="formCheck-3">Hybrid</label></div>
                         <div></div>
                     </div></div>
@@ -10507,14 +10508,8 @@ session_start();
           }
         }
 
-        function clear()
-        {
-            document.getElementById("search").reset();
-            document.getElementById("rawTable").reset();
-            document.getElementById("priorYearTable").reset();
-            document.getElementById("currentYearTable").reset();
-            
-        }
+
+
 
     </script>
 </body>
