@@ -33,7 +33,7 @@ session_start();
         </div>
     </nav>
     <div></div>
-    <form action="index.php" method="post">
+    <form id="search" action="index.php" method="post">
         <div id="form" class="form-group grayLightest" style="color:rgb(33,37,41);padding:10px 52px;font-size:11px;">
             <div class="container">
                 <div class="row">
@@ -6238,7 +6238,7 @@ session_start();
                             <td class="bgGreen center"><strong>S2 YTD = S1 + S2</strong></td>
                             <td class="bgGreen center"><strong>Difference</strong></td>
                         </tr>
-                        <?php require 'addingup.php'?>
+                        <?php require 'addingupPrior.php'?>
                         <tr>
                             <th><br></th>
                         </tr>
@@ -10506,6 +10506,16 @@ session_start();
             x.style.display = "none";
           }
         }
+
+        function clear()
+        {
+            document.getElementById("search").reset();
+            document.getElementById("rawTable").reset();
+            document.getElementById("priorYearTable").reset();
+            document.getElementById("currentYearTable").reset();
+            
+        }
+
     </script>
 </body>
 

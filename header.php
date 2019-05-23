@@ -522,7 +522,7 @@
             $HelperValues3GSp = LTRIM(RTRIM($FinStmtTypeGS)) . LTRIM(RTRIM($EndDate3p)) . LTRIM(RTRIM($Interim3p)) . LTRIM(RTRIM($StatementDate3GSp)) . LTRIM( RTRIM($UpdateType3GSp)) . LTRIM(RTRIM($InterimType3p)) . LTRIM(RTRIM($DateLength3p));
       }
 
-      require 'coaPriorYear.php';  
+      require 'coa.php';  
 
       }
 ?>
