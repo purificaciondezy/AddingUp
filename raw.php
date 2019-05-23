@@ -6,8 +6,7 @@
             $FY = $_POST['FY'];
             $Type = $_POST['radioButton'];
 
-            if($Type == "SemiAnnual")
-            {
+            
                   $query = "SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
 
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
@@ -258,6 +257,8 @@
 
                         $pdoExec = $pdoResult->execute(array(":RepoNoINC"=>$RepoNo, ":FYINC"=>$FY, ":PFYINC"=>$PFY, ":RepoNoBAL"=>$RepoNo, ":FYBAL"=>$FY, ":PFYBAL"=>$PFY, ":RepoNoCAS"=>$RepoNo, ":FYCAS"=>$FY, ":PFYCAS"=>$PFY, ":RepoNoBS"=>$RepoNo, ":FYBS"=>$FY, ":PFYBS"=>$PFY, ":RepoNoGS"=>$RepoNo, ":FYGS"=>$FY, ":PFYGS"=>$PFY));
             
+                  if($Type == "SemiAnnual")
+                  {     
                               if($pdoExec)
                               {
                                   echo '
@@ -348,6 +349,11 @@
                                       }
                                       
                                   }
+                  }
+
+                  else
+                  {
+                        
                   }
             } 
       }
