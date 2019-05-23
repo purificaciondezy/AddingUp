@@ -4,11 +4,10 @@
     {
         $RepoNo = $_POST['RepoNo'];
         $FY = $_POST['FY'];
-        $Type = $_POST['radioButton'];
         $PFY = $FY-1;
        
 
-        if($Type == "SemiAnnual")
+        if(!empty($_POST['radioButton']))
         {
             $query = "SELECT distinct 
             i.RepoNo, i.IssuerName, p.FY, d.OrgID
@@ -35,16 +34,21 @@
                         $RepoNo = $row['RepoNo'];
                         $IssuerName = $row['IssuerName'];   
                         $FY = $row['FY'];
-                        
+                        $_SESSION['radioButton'] = $_POST['radioButton'];
                     }
                 }
             }
         }
+        
+
 
         else
         {
-            echo 'INVALID INPUT';
+            echo "<script>alert('Please select the presentation type.');</script>";
+            $RepoNo = "";
+            $FY = "";
         }
     }
+    
 
 ?>
