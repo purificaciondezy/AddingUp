@@ -73,7 +73,11 @@ session_start();
                     <div class="col-md-12 offset-0" style="padding:5px 30px;">
                         <div></div>
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Quarter" value="Quarter"><label class="form-check-label" for="formCheck-1">Quarter</label></div>
+<<<<<<< HEAD
                         <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required="" <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") {echo "checked";}?><label class="form-check-label" for="formCheck-2" >Semi-Annual</label></div>
+=======
+                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required  <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") echo 'checked="checked"';?><label class="form-check-label" for="formCheck-2" >Semi-Annual</label></div>
+>>>>>>> 6cda3e6fcd57c26ba83f8d4777e89b533ada8b45
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Hybrid" value="Hybrid"><label class="form-check-label" for="formCheck-3">Hybrid</label></div>
                         <div></div>
                     </div></div>
@@ -83,7 +87,8 @@ session_start();
                             <div class="col-xl-11 offset-xl-0">
                                 <button class="btn btn-primary" type="submit" id="fundbpro" style="margin:4px;background-color:#001eff;height:50px;width:100px;font-size:12px;" name="fundbpro"><strong>PRODUCT</strong><br>FundbPRO</button>
                                 <button disabled class="btn btn-primary" type="button" id="btnDoPlus" style="margin:5px;background-color:#666666;border-color:#666666;height:50px;width:100px;padding:1px;font-size:12px;" name="btnDoPlus"><strong>DO PLUS</strong><br>Fundb<br></button>
-                                <button class="btn btn-primary"type="button" id="fundb" style="margin:2px;background-color:#8c8c8c;border-color:#8c8c8c;height:50px;width:100px;font-size:12px;padding:7px 7px;" name="fundb"><strong>Clear</strong><br></button></div>
+                                <button class="btn btn-primary" type="reset" id="clear" style="margin:2px;background-color:#8c8c8c;border-color:#8c8c8c;height:50px;width:100px;font-size:12px;padding:7px 7px;" name="clear"><strong>Clear</strong><br></button></div>
+
                         </div>
                     </div>
                 </div>
@@ -10507,6 +10512,20 @@ session_start();
             x.style.display = "none";
           }
         }
+
+<<<<<<< HEAD
+
+
+=======
+        function reset() {
+          var y = document.getElementById("rawTable");
+          if (y.style.display === "") {
+            y.style.display = "";
+          } else {
+            y.style.display = "";
+          }
+        }
+>>>>>>> 6cda3e6fcd57c26ba83f8d4777e89b533ada8b45
 
 
 
