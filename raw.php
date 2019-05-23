@@ -5,9 +5,7 @@
             $RepoNo = $_POST['RepoNo'];
             $FY = $_POST['FY'];
 
-
-            
-                  $query = "SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
+                  $query = "SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,111)) as EndDate,  Convert(varchar, f.StatementDate,111) as StatementDate,  Convert(varchar, f.FilingDate,111) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
 
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
                         LTRIM(RTRIM(f.FinStmtType))+ 
@@ -24,9 +22,9 @@
 
                         --HelperValues(FinStmtType/PeriodEndDate/Interim/StatementDate/FilingType/InterimTypeDesc/DateLength/COA)
                         LTRIM(RTRIM(f.FinStmtType))+ 
-                        Convert(varchar, p.EndDate,101)+
+                        Convert(varchar, p.EndDate,111)+
                         LTRIM(RTRIM(Convert(Char,f.Interim)))+
-                        Convert(varchar, f.StatementDate,101)+
+                        Convert(varchar, f.StatementDate,111)+
                         LTRIM(RTRIM(f.FilingType))+
                         LTRIM(RTRIM(c.InterimTypeDesc))+
                         LTRIM(RTRIM(Convert(Char,f.Datelength)))+
@@ -57,7 +55,7 @@
 
                         -------------------BALANCE SHEET
                         UNION ALL
-                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
+                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,111)) as EndDate,  Convert(varchar, f.StatementDate,111) as StatementDate,  Convert(varchar, f.FilingDate,111) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
                         LTRIM(RTRIM(f.FinStmtType))+ 
                         Convert(Varchar(5),Datediff(DD,'18991230',p.EndDate))+
@@ -73,9 +71,9 @@
 
                         --HelperValues(FinStmtType/PeriodEndDate/Interim/StatementDate/FilingType/InterimTypeDesc/DateLength/COA)
                         LTRIM(RTRIM(f.FinStmtType))+ 
-                        Convert(varchar, p.EndDate,101)+
+                        Convert(varchar, p.EndDate,111)+
                         LTRIM(RTRIM(Convert(Char,f.Interim)))+
-                        Convert(varchar, f.StatementDate,101)+
+                        Convert(varchar, f.StatementDate,111)+
                         LTRIM(RTRIM(f.FilingType))+
                         LTRIM(RTRIM(c.InterimTypeDesc))+
                         LTRIM(RTRIM(Convert(Char,f.Datelength)))+
@@ -106,7 +104,7 @@
 
                         -------------------CASH FLOW STATEMENT
                         UNION ALL
-                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
+                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,111)) as EndDate,  Convert(varchar, f.StatementDate,111) as StatementDate,  Convert(varchar, f.FilingDate,111) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, l.COA, l.ShortDescription, REPLACE(CONVERT(VARCHAR(50), (CAST(a.LineItemValue AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
                         LTRIM(RTRIM(f.FinStmtType))+ 
                         Convert(Varchar(5),Datediff(DD,'18991230',p.EndDate))+
@@ -122,9 +120,9 @@
 
                         --HelperValues(FinStmtType/PeriodEndDate/Interim/StatementDate/FilingType/InterimTypeDesc/DateLength/COA)
                         LTRIM(RTRIM(f.FinStmtType))+ 
-                        Convert(varchar, p.EndDate,101)+
+                        Convert(varchar, p.EndDate,111)+
                         LTRIM(RTRIM(Convert(Char,f.Interim)))+
-                        Convert(varchar, f.StatementDate,101)+
+                        Convert(varchar, f.StatementDate,111)+
                         LTRIM(RTRIM(f.FilingType))+
                         LTRIM(RTRIM(c.InterimTypeDesc))+
                         LTRIM(RTRIM(Convert(Char,f.Datelength)))+
@@ -155,7 +153,7 @@
 
                         -------------------BUSINESS SEGMENT
                         UNION ALL
-                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, a.COA, e.description, REPLACE(CONVERT(VARCHAR(50), (CAST(a.Value AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
+                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,111)) as EndDate,  Convert(varchar, f.StatementDate,111) as StatementDate,  Convert(varchar, f.FilingDate,111) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, a.COA, e.description, REPLACE(CONVERT(VARCHAR(50), (CAST(a.Value AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
                         LTRIM(RTRIM(f.FinStmtType))+ 
                         Convert(Varchar(5),Datediff(DD,'18991230',p.EndDate))+
@@ -171,9 +169,9 @@
 
                         --HelperValues(FinStmtType/PeriodEndDate/Interim/StatementDate/FilingType/InterimTypeDesc/DateLength/COA)
                         LTRIM(RTRIM(f.FinStmtType))+ 
-                        Convert(varchar, p.EndDate,101)+
+                        Convert(varchar, p.EndDate,111)+
                         LTRIM(RTRIM(Convert(Char,f.Interim)))+
-                        Convert(varchar, f.StatementDate,101)+
+                        Convert(varchar, f.StatementDate,111)+
                         LTRIM(RTRIM(f.FilingType))+
                         LTRIM(RTRIM(c.InterimTypeDesc))+
                         LTRIM(RTRIM(Convert(Char,f.Datelength)))+
@@ -204,7 +202,7 @@
 
                         -------------------GEOGRAPHIC SEGMENT
                         UNION ALL
-                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,101)) as EndDate,  Convert(varchar, f.StatementDate,101) as StatementDate,  Convert(varchar, f.FilingDate,101) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, a.COA, e.description, REPLACE(CONVERT(VARCHAR(50), (CAST(a.Value AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
+                        SELECT DISTINCT i.IssuerID, i.RepoNo, b.IndType, i.IssuerName, coalesce(i.ExchangeCountryCode, i.CountryCode) Exchange_CountryCode, i.Active,  f.FinStmtType, p.FY,  f.Interim, max(Convert(varchar, p.EndDate,111)) as EndDate,  Convert(varchar, f.StatementDate,111) as StatementDate,  Convert(varchar, f.FilingDate,111) as FilingDate,  f.Flash, f.Preliminary, f.Detailed, f.SubmissionType, REPLACE(CONVERT(VARCHAR(50), (CAST(f.ReportUnit AS money)), 1), '.00', '') as Scaling, f.FilingType, p.PeriodType, c.InterimTypeDesc, f.DateLength, a.LineItemID, a.COA, e.description, REPLACE(CONVERT(VARCHAR(50), (CAST(a.Value AS money)), 1), '.00', '') LineItemValue, a.UpdatedBy, Convert(varchar, a.UpdatedOn,1) as UpdatedOn,
                         --HelperStatementDate(FinStmtType/PeriodEndDate/Interim/DateLength)
                         LTRIM(RTRIM(f.FinStmtType))+ 
                         Convert(Varchar(5),Datediff(DD,'18991230',p.EndDate))+
@@ -220,9 +218,9 @@
 
                         --HelperValues(FinStmtType/PeriodEndDate/Interim/StatementDate/FilingType/InterimTypeDesc/DateLength/COA)
                         LTRIM(RTRIM(f.FinStmtType))+ 
-                        Convert(varchar, p.EndDate,101)+
+                        Convert(varchar, p.EndDate,111)+
                         LTRIM(RTRIM(Convert(Char,f.Interim)))+
-                        Convert(varchar, f.StatementDate,101)+
+                        Convert(varchar, f.StatementDate,111)+
                         LTRIM(RTRIM(f.FilingType))+
                         LTRIM(RTRIM(c.InterimTypeDesc))+
                         LTRIM(RTRIM(Convert(Char,f.Datelength)))+
@@ -359,4 +357,6 @@
                   }
             } 
       }
+
+      
 ?>

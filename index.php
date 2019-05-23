@@ -2,7 +2,7 @@
 session_start();
     require 'connect.php';
     require 'variables.php';
-    require 'formSearch.php';
+    require 'formSearch.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -73,11 +73,7 @@ session_start();
                     <div class="col-md-12 offset-0" style="padding:5px 30px;">
                         <div></div>
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Quarter" value="Quarter"><label class="form-check-label" for="formCheck-1">Quarter</label></div>
-<<<<<<< HEAD
-                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required="" <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") {echo "checked";}?><label class="form-check-label" for="formCheck-2" >Semi-Annual</label></div>
-=======
-                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required  <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") echo 'checked="checked"';?><label class="form-check-label" for="formCheck-2" >Semi-Annual</label></div>
->>>>>>> 6cda3e6fcd57c26ba83f8d4777e89b533ada8b45
+                        <div class="form-check"><input class="form-check-input" type="radio" name="radioButton" id="SemiAnnual" value="SemiAnnual" required  <?php if (isset($_POST['radioButton']) && $_POST['radioButton']=="SemiAnnual") echo 'checked="checked"';?><label class="form-check-label" for="formCheck-2">Semi-Annual</label></div>
                         <div class="form-check"><input disabled class="form-check-input" type="radio" name="radioButton" id="Hybrid" value="Hybrid"><label class="form-check-label" for="formCheck-3">Hybrid</label></div>
                         <div></div>
                     </div></div>
@@ -10512,23 +10508,6 @@ session_start();
             x.style.display = "none";
           }
         }
-
-<<<<<<< HEAD
-
-
-=======
-        function reset() {
-          var y = document.getElementById("rawTable");
-          if (y.style.display === "") {
-            y.style.display = "";
-          } else {
-            y.style.display = "";
-          }
-        }
->>>>>>> 6cda3e6fcd57c26ba83f8d4777e89b533ada8b45
-
-
-
 
     </script>
 </body>

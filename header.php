@@ -2,9 +2,7 @@
 
 	if(stripos($row['FY'], strval($FY)) !== false)
 	{    
-
             $EndDate[] = $row['EndDate']; 
-
 		$EndDate0 = max($EndDate);
 		$EndDate1 = max($EndDate);
 		$EndDate2 = max($EndDate);
