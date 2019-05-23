@@ -315,9 +315,9 @@
                                       <td>'.$row['FinStmtType'].'</td>         
                                       <td>'.$row['FY'].'</td>          
                                       <td>'.$row['Interim'].'</td>         
-                                      <td>'.$row['EndDate'].'</td>           
-                                      <td>'.$row['StatementDate'].'</td>           
-                                      <td>'.$row['FilingDate'].'</td>          
+                                      <td>'.date("m/d/Y", strtotime($row['EndDate'])).'</td>           
+                                      <td>'.date("m/d/Y", strtotime($row['StatementDate'])).'</td>           
+                                      <td>'.date("m/d/Y", strtotime($row['FilingDate'])).'</td>          
                                       <td>'.$row['Flash'].'</td>           
                                       <td>'.$row['Preliminary'].'</td>         
                                       <td>'.$row['Detailed'].'</td>            

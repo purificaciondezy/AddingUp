@@ -130,11 +130,11 @@ session_start();
                     <tbody>
                         <tr>
                             <td width="30%"><strong>Period End Date</strong></td>
-                            <?php echo '<td class="bgGray" width="15%">'.$EndDate0.'</td>
+                            <?php echo '<td class="bgGray" width="15%">'.date("m/d/Y", strtotime($EndDate0)).'</td>
                             <td class="bgGray" width="15%"></td>
-                            <td class="bgGray" width="15%">'.$EndDate1.'</td>
-                            <td class="bgGray" width="15%">'.$EndDate2.'</td>
-                            <td class="bgGray" width="15%">'.$EndDate3.'</td>';?>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($EndDate1)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($EndDate2)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($EndDate3)).'</td>';?>
                         </tr>
                         <tr>
                             <td><strong>Interim Number</strong></td>
@@ -146,19 +146,19 @@ session_start();
                         </tr>
                         <tr>
                             <td><strong>Statement Date</strong></td>
-                            <?php echo '<td class="bgGray" width="15%">'.$StatementDate0.'</td>
+                            <?php echo '<td class="bgGray" width="15%">'.date("m/d/Y", strtotime($StatementDate0)).'</td>
                             <td class="bgGray" width="15%"></td>
-                            <td class="bgGray" width="15%">'.$StatementDate1.'</td>
-                            <td class="bgGray" width="15%">'.$StatementDate2.'</td>
-                            <td class="bgGray" width="15%">'.$StatementDate3.'</td>';?>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($StatementDate1)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($StatementDate2)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($StatementDate3)).'</td>';?>
                         </tr>
                         <tr>
                             <td><strong>Filing Date</strong></td>
-                            <?php echo '<td class="bgGray" width="15%">'.$FilingDate0.'</td>
+                            <?php echo '<td class="bgGray" width="15%">'.date("m/d/Y", strtotime($FilingDate0)).'</td>
                             <td class="bgGray" width="15%"></td>
-                            <td class="bgGray" width="15%">'.$FilingDate1.'</td>
-                            <td class="bgGray" width="15%">'.$FilingDate2.'</td>
-                            <td class="bgGray" width="15%">'.$FilingDate3.'</td>';?>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($FilingDate1)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($FilingDate2)).'</td>
+                            <td class="bgGray" width="15%">'.date("m/d/Y", strtotime($FilingDate3)).'</td>';?>
                         </tr>
                         <tr>
                             <td><strong>Submission Type</strong></td>
@@ -1952,11 +1952,11 @@ session_start();
                         </tr>
                         <tr>
                             <td><strong>Statement Date</strong></td>
-                            <?php echo '<td class="bgGray">'.$StatementDate0BAL.'</td>
+                            <?php echo '<td class="bgGray">'.date("m/d/Y", strtotime($StatementDate0BAL)).'</td>
                             <td class="bgGray"></td>
-                            <td class="bgGray">'.$StatementDate1BAL.'</td>
-                            <td class="bgGray">'.$StatementDate2BAL.'</td>
-                            <td class="bgGray">'.$StatementDate3BAL.'</td>' ?>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate1BAL)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate2BAL)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate3BAL)).'</td>' ?>
                         </tr>
                         <tr>
                             <td><strong>Submission Type</strong><br></td>
@@ -2676,11 +2676,11 @@ session_start();
                         </tr>
                         <tr>
                             <td><strong>Statement Date</strong></td>
-                            <?php echo '<td class="bgGray">'.$StatementDate0CAS.'</td>
+                            <?php echo '<td class="bgGray">'.date("m/d/Y", strtotime($StatementDate0CAS)).'</td>
                             <td class="bgGray"></td>
-                            <td class="bgGray">'.$StatementDate1CAS.'</td>
-                            <td class="bgGray">'.$StatementDate2CAS.'</td>
-                            <td class="bgGray">'.$StatementDate3CAS.'</td>' ?>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate1CAS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate2CAS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate3CAS)).'</td>' ?>
                         </tr>
                         <tr>
                             <td><strong>Submission Type</strong></td>
@@ -3598,11 +3598,11 @@ session_start();
                         </tr>
                         <tr>
                             <td><strong>Statement Date</strong></td>
-                            <?php echo '<td class="bgGray">'.$StatementDate0BS.'</td>
+                            <?php echo '<td class="bgGray">'.date("m/d/Y", strtotime($StatementDate0BS)).'</td>
                             <td class="bgGray"></td>
-                            <td class="bgGray">'.$StatementDate1BS.'</td>
-                            <td class="bgGray">'.$StatementDate2BS.'</td>
-                            <td class="bgGray">'.$StatementDate3BS.'</td>' ?>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate1BS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate2BS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate3BS)).'</td>' ?>
                         </tr>
                         <tr>
                             <td><strong>Submission Type</strong></td>
@@ -4451,11 +4451,11 @@ session_start();
                         </tr>
                         <tr>
                             <?php echo '<td><strong>Statement Date</strong><br></td>
-                            <td class="bgGray">'.$StatementDate0GS.'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate0GS)).'</td>
                             <td class="bgGray"></td>
-                            <td class="bgGray">'.$StatementDate1GS.'</td>
-                            <td class="bgGray">'.$StatementDate2GS.'</td>
-                            <td class="bgGray">'.$StatementDate3GS.'</td>' ?>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate1GS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate2GS)).'</td>
+                            <td class="bgGray">'.date("m/d/Y", strtotime($StatementDate3GS)).'</td>' ?>
                         </tr>
                         <tr>
                             <td><strong>Submission Type</strong></td>
