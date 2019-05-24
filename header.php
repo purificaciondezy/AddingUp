@@ -3,7 +3,7 @@
 	if(stripos($row['FY'], strval($FY)) !== false)
 	{    
             $EndDate[] = $row['EndDate']; 
-		$EndDate0 = max($EndDate); 
+		$EndDate0 = max($EndDate);
 		$EndDate1 = max($EndDate);
 		$EndDate2 = max($EndDate);
 
@@ -18,7 +18,6 @@
 
 		    if($EndDate0==$EndDate0 && $row['Interim'] == 0 &&$row['DateLength']==12) 
 		    {
-                        
 		          $Interim0 = $row['Interim'];
 		          $DateLength0 = $row['DateLength'];
 		          $DateLength1 = $row['DateLength'];
